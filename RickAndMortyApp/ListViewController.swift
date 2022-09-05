@@ -14,7 +14,7 @@ class ListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchEpisods()
+        fetchDataAboutCartoon(url: urlLink)
     }
 
     // MARK: - Table view data source
@@ -35,6 +35,7 @@ class ListViewController: UITableViewController {
         return cell
     }
 
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -42,28 +43,18 @@ class ListViewController: UITableViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-}
-
-extension ListViewController {
-    private func fetchEpisods() {
-        guard let url = URL(string: urlLink) else { return }
-        
-        URLSession.shared.dataTask(with: url) { data, _, error in
-            guard let data = data else {
-                print(error?.localizedDescription ?? "Nothing")
-                return
-            }
-            
-            do {
-                let cartoon = try JSONDecoder().decode(Cartoon.self, from: data)
-                DispatchQueue.main.async {
-                    self.characters = cartoon.results
-                    self.tableView.reloadData()
-                    print(self.characters.count)
-                }
-            } catch let error {
+    */
+    
+    private func fetchDataAboutCartoon(url: String) {
+        NetworkManager.shared.fetch(Cartoon.self, from: url) { [weak self] result in
+            switch result {
+            case .success(let cartoon):
+                let character = cartoon.results
+                self?.characters = character
+                self?.tableView.reloadData()
+            case .failure(let error):
                 print(error)
             }
-        }.resume()
+        }
     }
 }

@@ -15,6 +15,7 @@
 		428E721928C4FE3300F10E58 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E721828C4FE3300F10E58 /* ListViewController.swift */; };
 		428E721B28C4FFAD00F10E58 /* Cartoon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E721A28C4FFAD00F10E58 /* Cartoon.swift */; };
 		428E721D28C50D5600F10E58 /* CharacterViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E721C28C50D5600F10E58 /* CharacterViewCell.swift */; };
+		4295364828C66A5D006C4A02 /* Networkmanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4295364728C66A5D006C4A02 /* Networkmanager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		428E721828C4FE3300F10E58 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		428E721A28C4FFAD00F10E58 /* Cartoon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cartoon.swift; sourceTree = "<group>"; };
 		428E721C28C50D5600F10E58 /* CharacterViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewCell.swift; sourceTree = "<group>"; };
+		4295364728C66A5D006C4A02 /* Networkmanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networkmanager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				428E721228C4FC8500F10E58 /* Info.plist */,
 				428E721A28C4FFAD00F10E58 /* Cartoon.swift */,
 				428E721C28C50D5600F10E58 /* CharacterViewCell.swift */,
+				4295364728C66A5D006C4A02 /* Networkmanager.swift */,
 			);
 			path = RickAndMortyApp;
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 				428E720728C4FC8400F10E58 /* SceneDelegate.swift in Sources */,
 				428E721B28C4FFAD00F10E58 /* Cartoon.swift in Sources */,
 				428E721928C4FE3300F10E58 /* ListViewController.swift in Sources */,
+				4295364828C66A5D006C4A02 /* Networkmanager.swift in Sources */,
 				428E721D28C50D5600F10E58 /* CharacterViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

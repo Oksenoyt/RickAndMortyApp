@@ -10,6 +10,7 @@ import UIKit
 class CharacterViewCell: UITableViewCell {
 
     @IBOutlet weak var characterName: UILabel!
+    @IBOutlet weak var characterPhoto: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,6 +25,19 @@ class CharacterViewCell: UITableViewCell {
     
     func configure(for character: Character) {
         characterName.text = character.name
+        fetchImage(url: character.image)
     }
-
+    
+    private func fetchImage(url: String) {
+        NetworkManager.shared.fetchImage(from: url) { [weak self] result in
+            switch result {
+            case .success(let photo):
+                DispatchQueue.main.async {
+                    self?.characterPhoto.image = UIImage(data: photo)
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
 }
